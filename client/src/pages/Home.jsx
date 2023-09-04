@@ -3,6 +3,8 @@ import HomeBackground from "../components/HomeBackground";
 import StoryCard from "../components/StoryCard";
 import StoryCardGrid from "../components/StoryCardGrid";
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import {NavLink} from 'react-router-dom'
 
 export default function Home(){
 
@@ -35,11 +37,14 @@ export default function Home(){
         </Box>
 
         
-        <Box display="flex" justifyContent="center" width="100%">
-            
-            <Box width="80vw">
+        <Box display="flex" justifyContent="center" width="100%" >
+            <Box width="70vw" >
                 <StoryCardGrid storyCards={storyCards} />
             </Box>
+        </Box>
+
+        <Box display="flex" justifyContent="center" width="100%" alignItems={"center"} height={"100px"}>
+            <Button color="inherit"><NavLink to="/portfolio" style={{ textDecoration: 'none' }}>See More</NavLink></Button>
         </Box>
 
         

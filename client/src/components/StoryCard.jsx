@@ -12,12 +12,12 @@ import "./css/StoryCard.css"
 
 export default function StoryCard({title, intro, img_link}){
     return(
-        <Card>
+        <Card style={{height:"60vh"}}>
             <CardHeader title={title} />
 
             <CardMedia
             component="img"
-            height="200"
+            style={{height:"50%"}}
             image={img_link}
             />
             <CardContent>

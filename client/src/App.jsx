@@ -15,7 +15,7 @@ function App() {
         <Route path="portfolio" element={<Portfolio />}/>
         <Route path="about" element={<About />}/>
         <Route path="contact" element={<Contact />}/>
-        <Route path="portofolio/:story" element={<StoryPage />}/> 
+        <Route path="portfolio/:story" element={<StoryPage />}/> 
       </Routes>
     </main>
 
@@ -24,4 +24,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

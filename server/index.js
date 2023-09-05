@@ -18,6 +18,12 @@ app.set('public', path.join(__dirname,'/public'));
 
 app.use(express.static('public'));
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'http://localhost:5173' // replace with your frontend server's address
+}));
+
 
 app.listen(3000, ()=>{
     console.log("APP is listening on port 3000")

@@ -14,10 +14,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/stories')
     });
 
 app.set('view engine', 'ejs');
-app.set('public', path.join(__dirname,'/public'));
-
-app.use(express.static('public'));
-
+app.use('/public', express.static(path.join(__dirname, 'public')));
 const cors = require('cors');
 
 app.use(cors({

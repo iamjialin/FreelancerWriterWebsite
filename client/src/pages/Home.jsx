@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar";
 import HomeBackground from "../components/HomeBackground";
 import StoryCard from "../components/StoryCard";
+import StorySnapshot from "../components/StorySnapshot"
 import StoryCardGrid from "../components/StoryCardGrid";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -39,7 +40,7 @@ export default function Home(){
         
         <Box display="flex" justifyContent="center" width="100%" >
             <Box width="70vw" >
-                <StoryCardGrid storyCards={storyCards} />
+                <StorySnapshot storyCards={storyCards} />
             </Box>
         </Box>
 

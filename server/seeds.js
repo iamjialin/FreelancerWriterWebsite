@@ -3,18 +3,25 @@ const Story = require('./model/stories.js');
 
 const storiesToInsert = [
     {
-        name: "all-sinners-burn",
-        title: "All Sinnners Burn",
-        background_img: "/imgs/all_sinners_burn.jpg",
-        intro_text: "In which a bent out of shape Nick is forced to contend with a serial killer known as the Devil of Del Rio; Ray the demon chronicles the youth's ruthless descent into the shattered necropolis of the modern world. ",
-        link: "https://dreamcoders.wixsite.com/my-site/post/all-sinners-burn"
+        name:"the-december-doctrine",
+        title:"The December Doctrine",
+        background_img:"/imgs/the_december_doctrine.jpg",
+        intro_text:"In the dead of winter, unfortunate souls seek refuge in a mega-church, only to find it infiltrated by psychotic individuals with a predilection for recreational murder. ",
+        link:"https://dreamcoders.wixsite.com/my-site/post/the-december-doctrine"
     },
     {
-        name:"blood-and-shadows",
-        title: "Blood and Shadows",
-        background_img: "/imgs/blood_and_shadows.jpg",
-        intro_text: "A multidimensional entity with a penchant for flesh and absolute power terrorizes London, but Mordred remains oblivious; Silas and Benedict grapple with their dual, contradicting natures",
-        link: "https://dreamcoders.wixsite.com/my-site/post/blood-and-shadows"
+        name:"cult-leader",
+        title:"Cult Leader",
+        background_img:"/imgs/cult_leader.jpg",
+        intro_text:"In which Mordred engineers a volunteer trip to a treatment center, only for the students to find out that their school counselor may have been the vicious leader of an apocalyptic pagan cult. ",
+        link:"https://dreamcoders.wixsite.com/my-site/post/cult-leader"
+    },
+    {
+        name:"son-of-cain",
+        title:"Son of Cain",
+        background_img: "/imgs/son_of_cain.jpg",
+        intro_text:"In which Clem and Benedict have very different ideas about what it means to be a lawman one defends notorious criminals while the other seeks to destroy them.",
+        link:"https://dreamcoders.wixsite.com/my-site/post/son-of-cain"
     },
     {
         name: "mirror-mirror",
@@ -24,12 +31,20 @@ const storiesToInsert = [
         link:"https://dreamcoders.wixsite.com/my-site/post/mirror-mirror"
     },
     {
-        name:"son-of-cain",
-        title:"Son of Cain",
-        background_img: "/imgs/son_of_cain.jpg",
-        intro_text:"In which Clem and Benedict have very different ideas about what it means to be a lawman one defends notorious criminals while the other seeks to destroy them.",
-        link:"https://dreamcoders.wixsite.com/my-site/post/son-of-cain"
-    }
+        name:"blood-and-shadows",
+        title: "Blood and Shadows",
+        background_img: "/imgs/blood_and_shadows.jpg",
+        intro_text: "A multidimensional entity with a penchant for flesh and absolute power terrorizes London, but Mordred remains oblivious; Silas and Benedict grapple with their dual, contradicting natures",
+        link: "https://dreamcoders.wixsite.com/my-site/post/blood-and-shadows"
+    },
+    {
+        name: "all-sinners-burn",
+        title: "All Sinnners Burn",
+        background_img: "/imgs/all_sinners_burn.jpg",
+        intro_text: "In which a bent out of shape Nick is forced to contend with a serial killer known as the Devil of Del Rio; Ray the demon chronicles the youth's ruthless descent into the shattered necropolis of the modern world. ",
+        link: "https://dreamcoders.wixsite.com/my-site/post/all-sinners-burn"
+    },
+
 ];
 
 mongoose.connect('mongodb://127.0.0.1:27017/stories')

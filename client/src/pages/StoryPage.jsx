@@ -20,7 +20,7 @@ function StoryPage() {
     return (
         <div>
             <h1>{storyData.title}</h1>
-            <img src={storyData.background_img} alt={storyData.title} />
+            <img src={"http://localhost:3000/public"+storyData.background_img} alt={storyData.title} />
             <p>{storyData.intro_text}</p>
             <a href={storyData.link}>Read more</a>
         </div>

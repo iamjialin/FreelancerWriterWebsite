@@ -39,7 +39,7 @@ const storiesToInsert = [
     },
     {
         name: "all-sinners-burn",
-        title: "All Sinnners Burn",
+        title: "All Sinners Burn",
         background_img: "/imgs/all_sinners_burn.jpg",
         intro_text: "In which a bent out of shape Nick is forced to contend with a serial killer known as the Devil of Del Rio; Ray the demon chronicles the youth's ruthless descent into the shattered necropolis of the modern world. ",
         link: "https://dreamcoders.wixsite.com/my-site/post/all-sinners-burn"

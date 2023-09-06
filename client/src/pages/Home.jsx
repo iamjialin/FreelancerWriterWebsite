@@ -12,8 +12,6 @@ export default function Home(){
 
     const [storyCards, setStoryCards] = useState([])
 
-
-
     const fetchStoryCards = () => fetch("http://localhost:3000/home")
                                     .then(response=>response.json())
                                     .then(data=>{setStoryCards(data)})

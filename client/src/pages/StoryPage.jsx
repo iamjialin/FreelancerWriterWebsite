@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-
+import NavBar from "../components/NavBar";
 
 function StoryPage() {
     const { story } = useParams();
@@ -17,8 +17,10 @@ function StoryPage() {
     if (!storyData) {
         return <div>Loading</div>
     }
+    console.log(storyData)
     return (
         <div>
+            <NavBar/>
             <h1>{storyData.title}</h1>
             <img src={"http://localhost:3000/public"+storyData.background_img} alt={storyData.title} />
             <p>{storyData.intro_text}</p>

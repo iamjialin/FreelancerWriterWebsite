@@ -2,31 +2,28 @@ import NavBar from "../components/NavBar";
 import HomeBackground from "../components/HomeBackground";
 import StoryCard from "../components/StoryCard";
 import StorySnapshot from "../components/StorySnapshot"
-import StoryCardGrid from "../components/StoryCardGrid";
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
+import { useState, useEffect } from "react";
 
 export default function Home(){
 
-    let storyCards = {
-        first:{
-            title: "All Sinners Burn",
-            intro: "In which a bent out of shape Nick is forced to contend with a serial killer known as the Devil of Del Rio; Ray the demon chronicles the youth's ruthless descent into the shattered necropolis of the modern world.",
-            img_link: "./story_card1.jpeg"
-        },
-        second:{
-            title: "Blood and Shadows",
-            intro: "A multidimensional entity with a penchant for flesh and absolute power terrorizes London, but Mordred remains oblivious; Silas and Benedict grapple with their dual, contradicting natures.",
-            img_link:"./story_card2.jpg"
-        },
-        third:{
-            title:"Mirror Mirror",
-            intro: "A twist of fate causes Benedict to inhabit the body of a man who causes death and destruction whenever he goes; Mordred is ecstatic when he finds out that his school has been turned into a casino.",
-            img_link:"./story_card3.jpg"
-        }
-    };
+    const [storyCards, setStoryCards] = useState([])
 
+
+
+    const fetchStoryCards = () => fetch("http://localhost:3000/home")
+                                    .then(response=>response.json())
+                                    .then(data=>{setStoryCards(data)})
+                                    .catch(error => console.error('Error fetching story data', error));
+
+    useEffect(()=>{fetchStoryCards()}, [])
+    console.log(storyCards)
+    if (storyCards.length === 0) {
+        return <div>Loading...</div>;
+    }
 
     return(
         <>

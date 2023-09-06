@@ -38,6 +38,19 @@ app.get('/portfolio/:story', async (req, res)=>{
     }
 })
 
+app.get('/home', async (req, res)=>{
+    try {
+        let storyLatest = await Story.find().sort({_id:-1}).limit(3);
+        if(!storyLatest){
+            return res.status(404).json({ message: 'Story not found' });
+        }
+        res.json(storyLatest)
+    } catch (error) {
+        res.status(500).json({message:err.message});
+    }
+
+})
+
 // Generic get request should be put in the last, to handle unknown path or route
 // app.get('*', (req, res)=>{
 

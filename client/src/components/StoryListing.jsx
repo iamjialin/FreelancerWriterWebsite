@@ -20,7 +20,7 @@ export default function StoryCardSnapshot() {
     }
 
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} style={{width: "80vw"}}>
             {storyCards.map((storyCard, index) => (
                 <Grid item xs={4} key={index}>
                     <NavLink 

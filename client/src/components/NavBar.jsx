@@ -11,14 +11,14 @@ export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1}}>
       <AppBar elevation={0} position="static" color='' sx={{ height: '50px', display: 'flex'}}>
-        <Toolbar variant="dense" sx={{ minHeight: '50px', mx:"25%"}}>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
+        <Toolbar variant="dense" sx={{ minHeight: '50px', mx:"20%"}}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily:'TravelingTypewriter'}}>
             Emerald
           </Typography>
-          <Button color="inherit"><NavLink to="/" style={{ textDecoration: 'none' }}>Home</NavLink></Button>
-          <Button color="inherit"><NavLink to="/portfolio" style={{ textDecoration: 'none' }}>Portfolio</NavLink></Button>
-          <Button color="inherit"><NavLink to="/about" style={{ textDecoration: 'none' }}>About</NavLink></Button>
-          <Button color="inherit"><NavLink to="/contact" style={{ textDecoration: 'none' }}>Contact</NavLink></Button>
+          <Button color="inherit"><NavLink to="/" style={{ textDecoration: 'none', fontFamily:'Gill Sans'}}>Home</NavLink></Button>
+          <Button color="inherit"><NavLink to="/portfolio" style={{ textDecoration: 'none', fontFamily:'Gill Sans'}}>Portfolio</NavLink></Button>
+          <Button color="inherit"><NavLink to="/about" style={{ textDecoration: 'none', fontFamily:'Gill Sans' }}>About</NavLink></Button>
+          <Button color="inherit"><NavLink to="/contact" style={{ textDecoration: 'none', fontFamily:'Gill Sans' }}>Contact</NavLink></Button>
         </Toolbar>
       </AppBar>
     </Box>

@@ -32,7 +32,7 @@ const Contact = () => {
     <div>
       <NavBar />
       <Typography variant="h4" style={{ textAlign: 'center', margin: '20px 0' }}>
-        Contact Us
+        Contact
       </Typography>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <TextField

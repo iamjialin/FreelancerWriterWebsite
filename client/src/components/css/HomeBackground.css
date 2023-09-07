@@ -13,7 +13,7 @@
 
 .greeting{
     font-size: 3em;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'TravelingTypewriter', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(233, 244, 226);
     margin:0;
     position: absolute;
@@ -22,11 +22,12 @@
     transform: translate(-50%, -50%);
 }
 
+
 .intro-text{
     width: 50%;
     color: rgb(233, 244, 226);
     font-size: 2em;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Lato', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: absolute;
     top: 50%;
     left: 30%;

@@ -5,7 +5,7 @@ import StorySnapshot from "../components/StorySnapshot"
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 export default function Home(){
@@ -28,7 +28,7 @@ export default function Home(){
         <NavBar/>
         <HomeBackground />
 
-        <Box display="flex" justifyContent="center" width="100%">
+        <Box display="flex" justifyContent="center" width="100%" fontFamily='TravelingTypewriter'>
             <h1>Check out my cool stories</h1>
         </Box>
 
@@ -40,7 +40,8 @@ export default function Home(){
         </Box>
 
         <Box display="flex" justifyContent="center" width="100%" alignItems={"center"} height={"100px"}>
-            <Button color="inherit"><NavLink to="/portfolio" style={{ textDecoration: 'none' }}>See More</NavLink></Button>
+            <Button color="success" component={Link} to="/portfolio" style={{ textDecoration:'none'}}
+            sx={{':hover': {color: "white", backgroundColor:"green"}}} size="large" variant="outlined">See More</Button>
         </Box>
 
         

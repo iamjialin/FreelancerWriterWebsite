@@ -8,10 +8,10 @@ require('dotenv').config();
 
 
 mongoose.connect(process.env.DB_URI)
-    .then(()=>{
+    .then(() => {
         console.log("Connection open")
     })
-    .catch(err=>{
+    .catch(err => {
         console.log(`ERROR: ${err}`)
     });
 
@@ -20,51 +20,48 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 const cors = require('cors');
 
 app.use(express.json());
-// app.use(cors({
-//   origin: process.env.CORS_ORIGIN
-// }));
 
 app.use(cors({
-    origin: '*' 
-  }));
+    origin: process.env.CORS_ORIGIN
+}));
 
-app.listen(3000, ()=>{
+app.listen(3000, () => {
     console.log("APP is listening on port 3000")
 })
 
-app.get('/portfolio', async (req, res)=>{
+app.get('/portfolio', async (req, res) => {
     try {
-        let storyAll = await Story.find().sort({_id:-1});
-        if(!storyAll){
+        let storyAll = await Story.find().sort({ _id: -1 });
+        if (!storyAll) {
             return res.status(404).json({ message: 'Story not found' });
         }
         res.json(storyAll)
     } catch (error) {
-        res.status(500).json({message:err.message});
+        res.status(500).json({ message: err.message });
     }
 })
 
-app.get('/portfolio/:story', async (req, res)=>{
+app.get('/portfolio/:story', async (req, res) => {
     try {
-        const story = await Story.findOne({name:req.params.story});
-        if(!story){
+        const story = await Story.findOne({ name: req.params.story });
+        if (!story) {
             return res.status(404).json({ message: 'Story not found' });
         }
         res.json(story)
     } catch (error) {
-        res.status(500).json({message:err.message});
+        res.status(500).json({ message: err.message });
     }
 })
 
-app.get('/home', async (req, res)=>{
+app.get('/home', async (req, res) => {
     try {
-        let storyLatest = await Story.find().sort({_id:-1}).limit(3);
-        if(!storyLatest){
+        let storyLatest = await Story.find().sort({ _id: -1 }).limit(3);
+        if (!storyLatest) {
             return res.status(404).json({ message: 'Story not found' });
         }
         res.json(storyLatest)
     } catch (error) {
-        res.status(500).json({message:err.message});
+        res.status(500).json({ message: err.message });
     }
 
 })
@@ -72,45 +69,37 @@ app.get('/home', async (req, res)=>{
 
 
 app.post('/send-email', async (req, res) => {
-  try {
-    const { customerEmail, customerName, message } = req.body;
+    try {
+        const { customerEmail, customerName, message } = req.body;
 
-    let transporter = nodemailer.createTransport({
-        host: 'smtp-mail.outlook.com',
-        port: 587,
-        secure: false, 
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS
-        }
-      });
+        let transporter = nodemailer.createTransport({
+            host: 'smtp-mail.outlook.com',
+            port: 587,
+            secure: false,
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
+            }
+        });
 
-    // send email to my email address
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER, 
-      to: process.env.EMAIL_USER,
-      subject: `New message from ${customerName} at ${customerEmail}`,
-      text: message
-    });
+        // send email to my email address
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER,
+            subject: `New message from ${customerName} at ${customerEmail}`,
+            text: message
+        });
 
-    // send confirmation email to the customer
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER, 
-      to: customerEmail,
-      subject: 'Thank you for your message',
-      text: 'We have received your message and will get back to you shortly.'
-    });
+        // send confirmation email to the customer
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: customerEmail,
+            subject: 'Thank you for your message',
+            text: 'We have received your message and will get back to you shortly.'
+        });
 
-    res.send({ status: 'success' });
-  } catch (error) {
-    res.send({ status: 'error', message: error.message });
-  }
+        res.send({ status: 'success' });
+    } catch (error) {
+        res.send({ status: 'error', message: error.message });
+    }
 });
-
-
-// Generic get request should be put in the last, to handle unknown path or route
-// app.get('*', (req, res)=>{
-
-//      //do something;
-
-// })

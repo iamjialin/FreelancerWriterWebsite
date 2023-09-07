@@ -1,4 +1,5 @@
 import "./css/HomeBackground.css"
+
 export default function HomeBackground(){
     return(
         <div className="container">

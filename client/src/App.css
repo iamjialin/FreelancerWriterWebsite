@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@font-face {
+    font-family: 'TravelingTypewriter';
+    src: local('TravelingTypewriter'),
+    url(./font/TravelingTypewriter.ttf) format('truetype');
+}

@@ -5,6 +5,7 @@ import Portfolio from './pages/Portfolio'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import StoryPage from './pages/StoryPage'
+import './font/TravelingTypewriter.ttf'; 
 function App() {
   return (
   <BrowserRouter>

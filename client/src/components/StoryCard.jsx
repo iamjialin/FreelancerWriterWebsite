@@ -12,8 +12,8 @@ import "./css/StoryCard.css"
 
 export default function StoryCard({title, intro, img_link}){
     return(
-        <Card style={{height:"60vh"}}>
-            <CardHeader title={title} />
+        <Card style={{height:"60vh"}} sx={{':hover': {boxShadow: 20}}}>
+            <CardHeader titleTypographyProps={{fontFamily:"TravelingTypewriter"}} title={title} />
 
             <CardMedia
             component="img"
@@ -21,7 +21,7 @@ export default function StoryCard({title, intro, img_link}){
             image={img_link}
             />
             <CardContent>
-                <Typography color="text.secondary">{intro}</Typography>
+                <Typography fontFamily={'Lato'} color="text.secondary">{intro}</Typography>
             </CardContent>
         </Card>
     )

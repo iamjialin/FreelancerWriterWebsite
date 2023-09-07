@@ -3,9 +3,11 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const Story = require('./model/stories.js');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/stories')
+mongoose.connect(process.env.DB_URI)
     .then(()=>{
         console.log("Connection open")
     })
@@ -17,10 +19,14 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 const cors = require('cors');
 
-app.use(cors({
-  origin: 'http://localhost:5173' // replace with your frontend server's address
-}));
+app.use(express.json());
+// app.use(cors({
+//   origin: process.env.CORS_ORIGIN
+// }));
 
+app.use(cors({
+    origin: '*' 
+  }));
 
 app.listen(3000, ()=>{
     console.log("APP is listening on port 3000")
@@ -62,6 +68,45 @@ app.get('/home', async (req, res)=>{
     }
 
 })
+
+
+
+app.post('/send-email', async (req, res) => {
+  try {
+    const { customerEmail, customerName, message } = req.body;
+
+    let transporter = nodemailer.createTransport({
+        host: 'smtp-mail.outlook.com',
+        port: 587,
+        secure: false, 
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS
+        }
+      });
+
+    // send email to my email address
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER, 
+      to: process.env.EMAIL_USER,
+      subject: `New message from ${customerName} at ${customerEmail}`,
+      text: message
+    });
+
+    // send confirmation email to the customer
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER, 
+      to: customerEmail,
+      subject: 'Thank you for your message',
+      text: 'We have received your message and will get back to you shortly.'
+    });
+
+    res.send({ status: 'success' });
+  } catch (error) {
+    res.send({ status: 'error', message: error.message });
+  }
+});
+
 
 // Generic get request should be put in the last, to handle unknown path or route
 // app.get('*', (req, res)=>{

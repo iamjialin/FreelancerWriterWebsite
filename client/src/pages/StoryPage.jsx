@@ -17,7 +17,7 @@ function StoryPage() {
     if (!storyData) {
         return <div>Loading</div>
     }
-    console.log(storyData)
+  
     return (
         <div>
             <NavBar/>

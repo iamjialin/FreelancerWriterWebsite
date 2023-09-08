@@ -7,11 +7,7 @@ export default function Portfolio(){
     return(
         <>
         <NavBar/>
-        <PortfolioBackground/>
-        {/* <Box display="flex" justifyContent="center" width="100%" height='20vh'>
-            <PortfolioBackground/>
-        </Box> */}
-        
+
 
         <Box display="flex" justifyContent="center" width="100%" >
             <StoryListing />

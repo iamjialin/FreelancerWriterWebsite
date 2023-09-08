@@ -1,17 +1,10 @@
-
 import React from "react";
-import { Container } from "@mui/material";
-export default function PortfolioBackground(){
-    return(
-        <div className="image-container">
-            <img src="/portfolio-background.webp"/>
-            <div className="centered-text">Your Text</div>
+import "./css/PortfolioBackground.css"
+
+export default function PortfolioBackground() {
+    return (
+        <div className="container" style={{ backgroundImage: `url(/portfolio-background.jpg)`, height: "20vh" }}>
+            <div className="title">Cabinet of Curiosities</div>
         </div>
-
-
-
-
-
     )
-
 }

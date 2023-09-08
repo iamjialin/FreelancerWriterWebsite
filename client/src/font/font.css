@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'TravelingTypewriter1';
-    src: local('')url('./font/TravelingTypewriter.ttf');
-}
-
-@font-face {
-    font-family: 'TravelingTypewriter2';
-    src: url('./font/TravelingTypewriter.otf');
-}

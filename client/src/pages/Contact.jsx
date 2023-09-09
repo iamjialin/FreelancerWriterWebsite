@@ -34,7 +34,7 @@ const Contact = () => {
   return (
     <div>
       <NavBar />
-      <Grid container marginTop={"2%"} marginBottom={"20vh"}>
+      <Grid container marginTop={"2%"} marginBottom={"30vh"}>
         <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
           <h1 style={{ fontFamily: "TravelingTypewriter" }}>Contact</h1>
         </Grid>

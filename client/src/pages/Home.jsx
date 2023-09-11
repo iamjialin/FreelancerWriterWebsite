@@ -12,7 +12,7 @@ export default function Home() {
 
     const [storyCards, setStoryCards] = useState([])
 
-    const fetchStoryCards = () => fetch("http://localhost:3000/home")
+    const fetchStoryCards = () => fetch(`${import.meta.env.VITE_API_URL}/home`)
         .then(response => response.json())
         .then(data => { setStoryCards(data) })
         .catch(error => console.error('Error fetching story data', error));

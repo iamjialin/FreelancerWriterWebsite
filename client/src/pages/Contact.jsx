@@ -24,7 +24,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/send-email', formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/send-email`, formData);
       console.log('Email sent successfully:', response.data);
     } catch (error) {
       console.log('Error sending email:', error);

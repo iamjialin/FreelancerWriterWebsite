@@ -2,6 +2,7 @@ import StoryCard from "./StoryCard";
 import Grid from '@mui/material/Grid';
 import { NavLink } from 'react-router-dom';
 
+
 export default function StoryCardSnapshot({ storyCards }) {
     return (
         <Grid container spacing={2}>
@@ -14,7 +15,7 @@ export default function StoryCardSnapshot({ storyCards }) {
                         <StoryCard
                             title={storyCard.title}
                             intro={storyCard.intro_text}
-                            img_link={"http://localhost:3000/public" + storyCard.background_img}
+                            img_link={`${import.meta.env.VITE_API_URL}/public/${storyCard.background_img}`}
                         />
                     </NavLink>
                 </Grid>

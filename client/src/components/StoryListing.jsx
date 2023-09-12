@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 
-export default function StoryCardSnapshot() {
+export default function StoryListing() {
     
 
     const [storyCards, setStoryCards] = useState([])

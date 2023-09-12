@@ -26,6 +26,15 @@ app.use(cors({
     origin: process.env.CORS_ORIGIN
 }));
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+  }
+  
+
 app.listen(PORT, () => {
     console.log("APP is listening on port 3000")
 })
@@ -105,7 +114,3 @@ app.post('/send-email', async (req, res) => {
     }
 });
 
-app.use(express.static('client/build'));
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});

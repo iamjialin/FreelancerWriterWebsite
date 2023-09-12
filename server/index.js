@@ -20,15 +20,13 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 const cors = require('cors');
 
-
-
 app.use(cors({
     origin: process.env.CORS_ORIGIN
 }));
 
 app.use(express.json());
 
-app.get('/portfolio', async (req, res) => {
+app.get('/api/portfolio', async (req, res) => {
     try {
         let storyAll = await Story.find().sort({ _id: -1 });
         if (!storyAll) {
@@ -36,11 +34,11 @@ app.get('/portfolio', async (req, res) => {
         }
         res.json(storyAll)
     } catch (error) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: error.message }); // Corrected from err.message to error.message
     }
 })
 
-app.get('/portfolio/:story', async (req, res) => {
+app.get('/api/portfolio/:story', async (req, res) => {
     try {
         const story = await Story.findOne({ name: req.params.story });
         if (!story) {
@@ -48,11 +46,11 @@ app.get('/portfolio/:story', async (req, res) => {
         }
         res.json(story)
     } catch (error) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: error.message }); // Corrected from err.message to error.message
     }
 })
 
-app.get('/home', async (req, res) => {
+app.get('/api/home', async (req, res) => {
     try {
         let storyLatest = await Story.find().sort({ _id: -1 }).limit(3);
         if (!storyLatest) {
@@ -60,14 +58,11 @@ app.get('/home', async (req, res) => {
         }
         res.json(storyLatest)
     } catch (error) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: error.message }); // Corrected from err.message to error.message
     }
-
 })
 
-
-
-app.post('/send-email', async (req, res) => {
+app.post('/api/send-email', async (req, res) => {
     try {
         const { customerEmail, customerName, message } = req.body;
 
@@ -109,9 +104,8 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname, '../client', 'dist', 'index.html'));
     });
-  }
-  
+}
 
 app.listen(PORT, () => {
-    console.log("APP is listening on port 3000")
-})
+    console.log(`APP is listening on port ${PORT}`) // Modified to log the actual PORT
+});

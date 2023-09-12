@@ -9,7 +9,7 @@ export default function StoryListing() {
 
     const [storyCards, setStoryCards] = useState([])
 
-    const fetchStoryCards = () => fetch(`${import.meta.env.VITE_API_URL}/portfolio`)
+    const fetchStoryCards = () => fetch(`${import.meta.env.VITE_API_URL}/api/portfolio`)
         .then(response => response.json())
         .then(data => { setStoryCards(data) })
         .catch(error => console.error('Error fetching story data', error));

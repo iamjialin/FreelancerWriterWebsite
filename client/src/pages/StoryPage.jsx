@@ -11,7 +11,7 @@ function StoryPage() {
     const [storyData, setStoryData] = useState(null);
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/portfolio/${story}`)
+        fetch(`${import.meta.env.VITE_API_URL}/api/portfolio/${story}`)
             .then(response => response.json())
             .then(data => setStoryData(data))
             .catch(error => console.error('Error fetching story data', error));

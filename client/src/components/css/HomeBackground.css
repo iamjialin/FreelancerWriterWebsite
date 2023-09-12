@@ -33,3 +33,29 @@
     left: 30%;
     transform: translate(-50%, -50%);
 }
+
+@media screen and (min-width: 380px) and (max-width: 500px) {
+    .greeting{
+        font-size: 30px;
+        top: 22.5%;
+        left: 50%;  
+    }
+    .intro-text {
+        font-size: 25px;
+        top: 50%;
+        left: 50%;
+    }
+  }
+
+@media screen and (min-width: 0px) and (max-width: 380px) {
+    .greeting{
+        font-size: 30px;
+        top: 18%;
+        left: 50%;  
+    }
+    .intro-text {
+        font-size: 25px;
+        top: 50%;
+        left: 50%;
+    }
+  }

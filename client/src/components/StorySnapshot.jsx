@@ -7,7 +7,7 @@ export default function StoryCardSnapshot({ storyCards }) {
     return (
         <Grid container spacing={2}>
             {storyCards.map((storyCard, index) => (
-                <Grid item xs={4} key={index}>
+                <Grid item xs={12} md={4} key={index}>
                     <NavLink
                         to={"portfolio/" + storyCard.title.replace(/\s+/g, '-').toLowerCase()}
                         style={{ textDecoration: 'none' }}

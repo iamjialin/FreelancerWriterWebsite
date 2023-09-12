@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 
-mongoose.connect(process.env.DB_URI)
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("Connection open")
     })

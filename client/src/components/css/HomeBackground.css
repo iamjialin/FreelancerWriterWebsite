@@ -50,7 +50,7 @@
 @media screen and (min-width: 380px) and (max-width: 650px) {
     .greeting{
         font-size: 30px;
-        top: 25%;
+        top: 22.5%;
         left: 50%;  
     }
     .intro-text {

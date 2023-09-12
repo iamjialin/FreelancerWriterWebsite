@@ -8,7 +8,7 @@ export default function About() {
     return (
         <>
             <NavBar />
-            <Box display="flex" justifyContent="center" width="100%" fontFamily='TravelingTypewriter' marginBottom={"20vh"}>
+            <Box display="flex" justifyContent="center" width="100%" fontFamily='TravelingTypewriter' marginTop={"5vh"} marginBottom={"20vh"}>
                 <Grid container width={"60vw"} marginTop={"2%"} marginBottom={"6%"}>
                     <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }} >
                         <h1>About Me</h1>

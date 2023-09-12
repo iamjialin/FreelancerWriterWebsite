@@ -60,7 +60,7 @@ const Contact = () => {
     <div>
       <NavBar />
       {showPopup && <Alert severity="success">Form submitted successfully!</Alert>}
-      <Grid container marginTop={"2%"} marginBottom={"30vh"}>
+      <Grid container marginTop={"10vh"} marginBottom={"30vh"}>
         <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
           <h1 style={{ fontFamily: "TravelingTypewriter" }}>Contact</h1>
         </Grid>

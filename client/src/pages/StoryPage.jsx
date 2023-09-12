@@ -25,7 +25,7 @@ function StoryPage() {
     return (
         <div>
             <NavBar />
-            <Grid container>
+            <Grid style={{marginTop:"5vh"}} container>
                 <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }} >
                     <h1 style={{ fontFamily: "TravelingTypewriter" }}>{storyData.title}</h1>
                 </Grid>

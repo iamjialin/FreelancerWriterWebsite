@@ -34,10 +34,23 @@
     transform: translate(-50%, -50%);
 }
 
-@media screen and (min-width: 380px) and (max-width: 500px) {
+@media screen and (min-width: 650px) and (max-width: 1050px) {
+    .greeting{
+        
+        top: 24%;
+        left: 35%;  
+    }
+    .intro-text {
+        top: 45%;
+        left: 35%;
+    }
+}
+
+
+@media screen and (min-width: 380px) and (max-width: 650px) {
     .greeting{
         font-size: 30px;
-        top: 22.5%;
+        top: 25%;
         left: 50%;  
     }
     .intro-text {
@@ -45,7 +58,7 @@
         top: 50%;
         left: 50%;
     }
-  }
+}
 
 @media screen and (min-width: 0px) and (max-width: 380px) {
     .greeting{
@@ -58,4 +71,4 @@
         top: 50%;
         left: 50%;
     }
-  }
+}

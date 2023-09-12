@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Footer from '../components/Footer';
+import Coffee from "../components/Coffee";
 
 
 function StoryPage() {
@@ -37,6 +38,8 @@ function StoryPage() {
                 </Grid>
                 <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }} >
                     <Link href={storyData.link} style={{ fontFamily: "Lato" }}>Read more</Link>
+                    <br />
+                    <p>If you like this story, you can <Coffee/></p>
                 </Grid>
             </Grid>
             <Footer />

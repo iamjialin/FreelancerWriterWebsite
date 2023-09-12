@@ -6,6 +6,7 @@ const Story = require('./model/stories.js');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
@@ -25,7 +26,7 @@ app.use(cors({
     origin: process.env.CORS_ORIGIN
 }));
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("APP is listening on port 3000")
 })
 

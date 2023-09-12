@@ -7,7 +7,7 @@ const Button = styled.a`
   text-decoration: none;
   display:inline-flex;
   color: #FFFFFF;
-  background-color: #FF813F;
+  background-color: #355520;
   border-radius: 5px;
   border: 1px solid transparent;
   padding: 0.7rem 1rem 0.7rem 1rem;

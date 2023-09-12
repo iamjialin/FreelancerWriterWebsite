@@ -7,6 +7,7 @@ import {
   Button,
   useTheme,
   useMediaQuery,
+  Link
 } from '@mui/material';
 import DrawerComponent from './DrawerComponent';
 
@@ -27,7 +28,7 @@ export default function NavBar({color = [255, 255, 255], textColor='black'}) {
       >
         <Toolbar variant="dense" sx={{ minHeight: '50px', mx: "20%" }}>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'TravelingTypewriter' }}>
-            Emerald
+            <Link href="/" style={{textDecoration:"none", color:`${textColor}`}}>Emerald</Link>
           </Typography>
           
           {isMobile ? (<DrawerComponent />):(

@@ -20,24 +20,13 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 const cors = require('cors');
 
-app.use(express.json());
+
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN
 }));
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
-
-    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, '../client', 'dist', 'index.html'));
-    });
-  }
-  
-
-app.listen(PORT, () => {
-    console.log("APP is listening on port 3000")
-})
+app.use(express.json());
 
 app.get('/portfolio', async (req, res) => {
     try {
@@ -114,3 +103,15 @@ app.post('/send-email', async (req, res) => {
     }
 });
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/dist')));
+
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, '../client', 'dist', 'index.html'));
+    });
+  }
+  
+
+app.listen(PORT, () => {
+    console.log("APP is listening on port 3000")
+})

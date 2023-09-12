@@ -6,7 +6,7 @@
         "server": "cd server && npm start",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "start": "node server/index.js",
-        "heroku-postbuild": "npm install -g vite && cd client && npm install && npm run build"
+        "heroku-postbuild": "cd client && npm install && npm run build"
     },
     "dependencies": {
         "concurrently": "^6.5.1"

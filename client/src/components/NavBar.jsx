@@ -21,7 +21,7 @@ export default function NavBar({color = [255, 255, 255], textColor='black'}) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar 
         elevation={0} 
-        position="static" 
+        position="fixed" 
         style={{ backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})`,
                  color:`${textColor}` }} 
         sx={{ height: '50px', display: 'flex'}}

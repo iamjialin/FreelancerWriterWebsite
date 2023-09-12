@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button, TextField } from '@mui/material';
 import axios from 'axios';
 import NavBar from '../components/NavBar';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Footer from '../components/Footer';
+import Alert from '@mui/material/Alert';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,9 @@ const Contact = () => {
     customerEmail: '',
     message: '',
   });
+
+  const [showPopup, setShowPopup] = useState(false);
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,6 +30,27 @@ const Contact = () => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/send-email`, formData);
       console.log('Email sent successfully:', response.data);
+
+      // Show the popup
+      setShowPopup(true);
+
+      // Hide the popup after 1 seconds
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 1000);
+
+      // Reset the form data
+      setFormData({
+        customerName: '',
+        customerEmail: '',
+        message: '',
+      });
+
+      // Reset the form inputs
+      if (formRef.current) {
+        formRef.current.reset();
+      }
+
     } catch (error) {
       console.log('Error sending email:', error);
     }
@@ -34,13 +59,14 @@ const Contact = () => {
   return (
     <div>
       <NavBar />
+      {showPopup && <Alert severity="success">Form submitted successfully!</Alert>}
       <Grid container marginTop={"2%"} marginBottom={"30vh"}>
         <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
           <h1 style={{ fontFamily: "TravelingTypewriter" }}>Contact</h1>
         </Grid>
         <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
           <Box width={"600px"}>
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} ref={formRef}>
               <TextField
                 variant="outlined"
                 margin="normal"

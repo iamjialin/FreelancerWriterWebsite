@@ -10,13 +10,17 @@ import {
 } from '@mui/material';
 import { Link } from "react-router-dom";
 
-function DrawerComponent() {
+function DrawerComponent({color = [255, 255, 255], textColor='black'}) {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
       <Drawer
         open={openDrawer}
         onClose={()=>setOpenDrawer(false)}
+        PaperProps={{
+          sx:{backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})`,
+          color:`${textColor}`}
+        }}
       >
         <List>
          <ListItem onClick={()=>setOpenDrawer(false)}>

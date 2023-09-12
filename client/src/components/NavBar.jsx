@@ -31,7 +31,7 @@ export default function NavBar({color = [255, 255, 255], textColor='black'}) {
             <Link href="/" style={{textDecoration:"none", color:`${textColor}`}}>Emerald</Link>
           </Typography>
           
-          {isMobile ? (<DrawerComponent />):(
+          {isMobile ? (<DrawerComponent color={color} textColor={textColor} />):(
             <div>
               <Button color="inherit" href="/" style={{ textTransform: "none", fontFamily: "Lato", fontSize: "1em" }}>Home</Button>
               <Button color="inherit" href="/portfolio" style={{ textTransform: "none", fontFamily: "Lato", fontSize: "1em" }}>Portfolio</Button>

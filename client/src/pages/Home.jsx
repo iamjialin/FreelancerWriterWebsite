@@ -11,9 +11,9 @@ import Footer from "../components/Footer";
 export default function Home() {
 
     const [storyCards, setStoryCards] = useState([])
-
+    console.log('Fetching from URL:', `${import.meta.env.VITE_API_URL}/home`);
     const fetchStoryCards = () => fetch(`${import.meta.env.VITE_API_URL}/home`)
-        .then(response => {console.log(`${import.meta.env.VITE_API_URL}/home`);response.json();})
+        .then(response => response.json())
         .then(data => { setStoryCards(data) })
         .catch(error => console.error('Error fetching story data', error));
 

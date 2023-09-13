@@ -33,10 +33,10 @@ export default function NavBar({color = [255, 255, 255], textColor='black'}) {
           
           {isMobile ? (<DrawerComponent color={color} textColor={textColor} />):(
             <div>
-              <Button color="inherit" href="/" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "2em" }}>Home</Button>
-              <Button color="inherit" href="/portfolio" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "2em" }}>Portfolio</Button>
-              <Button color="inherit" href="/about" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "2em" }}>About</Button>
-              <Button color="inherit" href="/contact" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "2em" }}>Contact</Button>
+              <Button color="inherit" href="/" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1.85em" }}>Home</Button>
+              <Button color="inherit" href="/portfolio" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1.85em" }}>Portfolio</Button>
+              <Button color="inherit" href="/about" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1.85em" }}>About</Button>
+              <Button color="inherit" href="/contact" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1.85em" }}>Contact</Button>
             </div>
           )}
         </Toolbar>

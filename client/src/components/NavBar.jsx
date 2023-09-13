@@ -27,16 +27,16 @@ export default function NavBar({color = [255, 255, 255], textColor='black'}) {
         sx={{ height: '50px', display: 'flex'}}
       >
         <Toolbar variant="dense" sx={{ minHeight: '50px', mx: "20%" }}>
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'QuiltedButterfly' }}>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'QuiltedButterfly', fontSize:"1.5em" }}>
             <Link href="/" style={{textDecoration:"none", color:`${textColor}`}}>Emerald</Link>
           </Typography>
           
           {isMobile ? (<DrawerComponent color={color} textColor={textColor} />):(
             <div>
-              <Button color="inherit" href="/" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1em" }}>Home</Button>
-              <Button color="inherit" href="/portfolio" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1em" }}>Portfolio</Button>
-              <Button color="inherit" href="/about" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1em" }}>About</Button>
-              <Button color="inherit" href="/contact" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1em" }}>Contact</Button>
+              <Button color="inherit" href="/" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1.5em" }}>Home</Button>
+              <Button color="inherit" href="/portfolio" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1.5em" }}>Portfolio</Button>
+              <Button color="inherit" href="/about" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1.5em" }}>About</Button>
+              <Button color="inherit" href="/contact" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1.5em" }}>Contact</Button>
             </div>
           )}
         </Toolbar>

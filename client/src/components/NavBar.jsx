@@ -24,7 +24,7 @@ export default function NavBar({color = [255, 255, 255], textColor='black'}) {
         position="fixed" 
         style={{ backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})`,
                  color:`${textColor}` }} 
-        sx={{ height: '50px', display: 'flex'}}
+        sx={{ height: '55px', display: 'flex'}}
       >
         <Toolbar variant="dense" sx={{ minHeight: '50px', mx: "20%" }}>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'QuiltedButterfly', fontSize:"2em" }}>

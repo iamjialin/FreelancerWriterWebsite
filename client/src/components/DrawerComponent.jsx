@@ -25,22 +25,22 @@ function DrawerComponent({color = [255, 255, 255], textColor='black'}) {
         <List>
          <ListItem onClick={()=>setOpenDrawer(false)}>
             <ListItemText>
-              <Button color="inherit" href="/" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1em"}}>Home</Button>
+              <Button color="inherit" href="/" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "2em"}}>Home</Button>
             </ListItemText>
           </ListItem>
           <ListItem onClick={()=>setOpenDrawer(false)}>
             <ListItemText>
-              <Button color="inherit" href="/portfolio" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1em" }}>Portfolio</Button>
+              <Button color="inherit" href="/portfolio" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "2em" }}>Portfolio</Button>
             </ListItemText>
           </ListItem>
           <ListItem onClick={()=>setOpenDrawer(false)}>
             <ListItemText>
-              <Button color="inherit" href="/about" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1em" }}>About</Button>
+              <Button color="inherit" href="/about" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "2em" }}>About</Button>
             </ListItemText>
           </ListItem>
           <ListItem onClick={()=>setOpenDrawer(false)}>
             <ListItemText>
-              <Button color="inherit" href="/contact" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "1em" }}>Contact</Button>
+              <Button color="inherit" href="/contact" style={{ textTransform: "none", fontFamily: "QuiltedButterfly", fontSize: "2em" }}>Contact</Button>
             </ListItemText>
           </ListItem>
         </List>

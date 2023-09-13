@@ -4,3 +4,8 @@
     src: local('TravelingTypewriter'),
     url(./font/TravelingTypewriter.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'QuiltedButterfly';
+    src: local('QuiltedButterfly'),
+    url(./font/QuiltedButterfly.ttf) format('truetype');
+}

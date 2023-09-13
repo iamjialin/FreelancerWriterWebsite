@@ -24,7 +24,7 @@ export default function Home() {
 
     return (
         <>
-            <NavBar color={[53, 85, 32]} textColor='white'/>
+            <NavBar color={[150, 181, 156]} textColor='black'/>
             <HomeBackground />
 
             <Box display="flex" justifyContent="center" width="100%" fontFamily='TravelingTypewriter'>

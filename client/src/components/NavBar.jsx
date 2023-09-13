@@ -27,7 +27,7 @@ export default function NavBar({color = [255, 255, 255], textColor='black'}) {
         sx={{ height: '50px', display: 'flex'}}
       >
         <Toolbar variant="dense" sx={{ minHeight: '50px', mx: "20%" }}>
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'TravelingTypewriter' }}>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'QuiltedButterfly' }}>
             <Link href="/" style={{textDecoration:"none", color:`${textColor}`}}>Emerald</Link>
           </Typography>
           

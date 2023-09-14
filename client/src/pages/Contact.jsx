@@ -14,7 +14,8 @@ const Contact = () => {
     message: '',
   });
 
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopupSent, setShowPopupSent] = useState(false);
+  const [showPopupSending, setShowPopupSending] = useState(false);
   const formRef = useRef(null);
 
   const handleChange = (e) => {
@@ -28,16 +29,18 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setShowPopupSending(true);
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/send-email`, formData);
+      setShowPopupSending(false);
       console.log('Email sent successfully:', response.data);
 
       // Show the popup
-      setShowPopup(true);
+      setShowPopupSent(true);
 
       // Hide the popup after 1 seconds
       setTimeout(() => {
-        setShowPopup(false);
-      }, 1000);
+        setShowPopupSent(false);
+      }, 3000);
 
       // Reset the form data
       setFormData({
@@ -59,7 +62,8 @@ const Contact = () => {
   return (
     <div>
       <NavBar />
-      {showPopup && <Alert severity="success">Form submitted successfully!</Alert>}
+      {showPopupSending && <Alert severity="info">Form sending......Please Wait</Alert>}
+      {showPopupSent && <Alert severity="success">Form submitted successfully!</Alert>}
       <Grid container marginTop={"10vh"} marginBottom={"30vh"}>
         <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
           <h1 style={{ fontFamily: "TravelingTypewriter" }}>Contact</h1>

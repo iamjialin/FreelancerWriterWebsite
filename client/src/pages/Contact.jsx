@@ -62,9 +62,11 @@ const Contact = () => {
   return (
     <div>
       <NavBar />
-      {showPopupSending && <Alert severity="info">Form sending......Please Wait</Alert>}
-      {showPopupSent && <Alert severity="success">Form submitted successfully!</Alert>}
       <Grid container marginTop={"10vh"} marginBottom={"30vh"}>
+        <Grid item xs={12}>
+          {showPopupSending && <Alert severity="info">Form sending......Please Wait</Alert>}
+          {showPopupSent && <Alert severity="success">Form submitted successfully!</Alert>}
+        </Grid>
         <Grid item xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
           <h1 style={{ fontFamily: "TravelingTypewriter" }}>Contact</h1>
         </Grid>
